@@ -1,0 +1,66 @@
+[project]
+name = "rosbags-parser"
+version = "0.1.0"
+description = "A CLI tool and library for parsing, processing, and converting ROS2 rosbag data to various formats (CSV, Parquet, HDF5)"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Daniel Pastor", email = "danpasmor@gmail.com" }
+]
+maintainers = [
+    { name = "Daniel Pastor", email = "danpasmor@gmail.com" }
+]
+keywords = [
+    "ros",
+    "ros2",
+    "rosbag",
+    "robotics",
+    "data-processing",
+    "mcap",
+    "pandas",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.3.1",
+    "pandas>=2.3.3",
+    "rich>=14.2.0",
+    "rosbags>=0.11.0",
+    "tqdm>=4.0.0",
+]
+
+[project.optional-dependencies]
+hdf5 = ["tables>=3.8.0"]
+yaml = ["pyyaml>=6.0"]
+all = ["tables>=3.8.0", "pyyaml>=6.0"]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/danpasmor/rosbags-parser"
+Documentation = "https://github.com/danpasmor/rosbags-parser#readme"
+Repository = "https://github.com/danpasmor/rosbags-parser.git"
+Issues = "https://github.com/danpasmor/rosbags-parser/issues"
+
+[project.scripts]
+rosbags-parser = "rosbags_parser:main"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
